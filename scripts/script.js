@@ -21,7 +21,10 @@ const game = () => {
 
     options.forEach((option) => {
       option.addEventListener("click", function () {
-        const computerNumber = Math.floor(Math.random() * 3); //Generating random number from 0-2
+        //Generating random number from 0-2
+        const computerNumber = Math.floor(
+          Math.random() * computerOptions.length
+        );
         const computerChoice = computerOptions[computerNumber]; //Applying random number to options array
         console.log(computerChoice);
         scoreCompare(this.textContent, computerChoice);
@@ -36,14 +39,18 @@ const game = () => {
     playerScore.textContent = pScore;
     computerScore.textContent = cScore;
   };
-  //Ending the game and disabling
+  //Ending the game and disabling buttons
   const endgame = () => {
+    const disableBtn = document.querySelector(".options");
+
     if (pScore === 5) {
       pointer.textContent =
         "Congratz! You win the game! Refresh to play again :)";
+      disableBtn.classList.add("disableButtons");
     } else if (cScore === 5) {
       pointer.textContent =
-        "Computer wins the game :( You can cry a river about it or... refresh the page and play again! :)";
+        "Computer wins the game :( Refresh the page and play again! :)";
+      disableBtn.classList.add("disableButtons");
     }
   };
 

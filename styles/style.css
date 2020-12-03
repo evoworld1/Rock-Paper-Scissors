@@ -89,3 +89,8 @@ div.fadeOut {
   opacity: 0;
   pointer-events: none;
 }
+
+div.disableButtons {
+  opacity: 0;
+  pointer-events: none;
+}
