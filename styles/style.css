@@ -1,6 +1,6 @@
 .game {
   height: 100vh;
-  background: rgb(45, 116, 223);
+  background: rgb(0, 0, 0);
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -65,12 +65,14 @@
 }
 
 .pointer {
+  max-height: 15vh;
   font-size: 50px;
   text-align: center;
 }
 
 .hands,
-.options {
+.options,
+.play-again {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -93,4 +95,76 @@ div.fadeOut {
 div.disableButtons {
   opacity: 0;
   pointer-events: none;
+}
+
+.play-again button {
+  visibility: hidden;
+  background: none;
+  background: rgb(113, 235, 235);
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  width: 150px;
+  height: 50px;
+  color: rgb(99, 99, 99);
+}
+
+@keyframes playerShake {
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  45% {
+    transform: translateY(-50px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes computerShake {
+  0% {
+    transform: translate(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  45% {
+    transform: translateY(-50px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes popInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
