@@ -72,7 +72,7 @@ const game = () => {
       (playerChoice === "paper" && computerChoice === "rock") ||
       (playerChoice === "scissors" && computerChoice === "paper")
     ) {
-      pointer.textContent = "Player wins! Let's get to the next round";
+      pointer.textContent = "Player wins!";
       pScore++;
       updateScore();
       endgame();
